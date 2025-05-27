@@ -580,7 +580,7 @@ services:
       ENABLE_WEBSITE_WATERCRAWL: ${ENABLE_WEBSITE_WATERCRAWL:-true}
   # The postgres database.
   db:
-    image: postgres:15-alpine
+    image: next-ai-postgres:15-alpine
     restart: always
     environment:
       PGUSER: ${PGUSER:-postgres}
@@ -603,7 +603,7 @@ services:
 
   # The redis cache.
   redis:
-    image: redis:6-alpine
+    image: next-ai-redis:6-alpine
     restart: always
     environment:
       REDISCLI_AUTH: ${REDIS_PASSWORD:-difyai123456}
@@ -735,7 +735,7 @@ services:
   # The nginx reverse proxy.
   # used for reverse proxying the API service and Web service.
   nginx:
-    image: nginx:latest
+    image: next-ai-nginx:latest
     restart: always
     volumes:
       - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
